@@ -1,0 +1,17 @@
+{{> partials/header}}
+
+<h2>News</h2>
+
+<div id="news-placeholder"></div>
+
+{{!-- earlier news still retain its original format --}}
+{{> partials/old_news}}
+
+<script>
+    const script = document.querySelector('#helpers');
+    script.addEventListener('load', () => {
+        fetchMarkdownAndReplaceId('/news.md', 'news-placeholder');
+    });
+</script>
+
+{{> partials/footer}}
