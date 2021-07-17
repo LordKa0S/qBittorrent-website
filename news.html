@@ -1998,10 +1998,14 @@ the new embedded tracker and qBittorrent shutdown upon torrent completion.</p>
 
 
 <script>
-    const script = document.querySelector('#helpers');
-    script.addEventListener('load', () => {
-        fetchMarkdownAndReplaceId('news.md', 'news-placeholder');
-    });
+    (async () => {
+        const response = await fetch('news.md');
+        const text = await response.text();
+        const script = document.getElementById('helpers');
+        script.addEventListener('load', () => {
+            transformMarkdownAndReplaceId(text, 'news-placeholder');
+        });
+    })();
 </script>
 
               </div>
