@@ -64,8 +64,10 @@
         const response = await fetch('index.md');
         const text = await response.text();
         const script = document.getElementById('helpers');
+        console.log('here');
         script.addEventListener('load', () => {
             transformMarkdownAndReplaceId(text, 'index-placeholder');
+            console.log('here2');
         });
     })();
 </script>
