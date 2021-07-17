@@ -8,10 +8,10 @@
 {{> partials/old_news}}
 
 <script>
-    const response = fetch('news.md');
+    const responsePromise = fetch('news.md');
     const script = document.getElementById('helpers');
     script.addEventListener('load', () => {
-        transformMarkdownAndReplaceId(text, 'news-placeholder');
+        transformMarkdownAndReplaceId(responsePromise, 'news-placeholder');
     });
 </script>
 
