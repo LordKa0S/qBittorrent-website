@@ -20,7 +20,11 @@ jobs:
       run: |
         npm run format
         git diff --exit-code
-    - name: build html
+    - name: markdown to handlebars
+      run: npm run md2hbs
+    - name: handlebars to html
+      run: npm run hbs2html
+    - name: generate final bundle
       run: npm run build
     - name: Deploy 🚀
       if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
