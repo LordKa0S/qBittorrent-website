@@ -1,3 +1,9 @@
+# md2hbs script output
+/handlebars/partials/gen
+
+# hbs2html script output
+/html
+
 # Node.gitignore (https://github.com/github/gitignore/blob/991e760c1c6d50fdda246e0178b9c58b06770b90/Node.gitignore)
 
 # Logs
